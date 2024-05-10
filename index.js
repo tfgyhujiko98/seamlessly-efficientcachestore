@@ -1,14 +1,13 @@
-function maxArea(height) {
-  let maxArea = 0;
-  let left = 0;
-  let right = height.length - 1;
-  while (left < right) {
-    maxArea = Math.max(
-      maxArea,
-      Math.min(height[left], height[right]) * (right - left),
-    );
-    if (height[left] < height[right]) left++;
-    else right--;
-  }
-  return maxArea;
-}
+const bubbleSortOptimized = (arr) => {
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+        swapped = true;
+      }
+    }
+  } while (swapped);
+  return arr;
+};
