@@ -1,18 +1,10 @@
-function searchRange(nums, target) {
-  let left = 0;
-  let right = nums.length - 1;
-  let start = -1;
-  let end = -1;
-  while (left <= right) {
-    const mid = Math.floor((left + right) / 2);
-    if (nums[mid] === target) {
-      start = mid;
-      end = mid;
-      while (nums[start] === target) start--;
-      while (nums[end] === target) end++;
-      return [start + 1, end - 1];
-    } else if (nums[mid] < target) left = mid + 1;
-    else right = mid - 1;
+const bubbleSort = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+    }
   }
-  return [start, end];
-}
+  return arr;
+};
