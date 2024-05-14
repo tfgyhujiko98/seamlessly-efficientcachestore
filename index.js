@@ -1,1 +1,1 @@
-const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
+const isEven = (num) => num % 2 === 0;
